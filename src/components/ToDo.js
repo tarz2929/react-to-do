@@ -5,8 +5,33 @@ import { v4 as uuidv4 } from 'uuid';
 function ToDo ()
 {
 
+    /*
+    // Assignment deconstructor (Array.)
+    const [num1, num2] = [1, 2];
+    console.log( num1 );
+    console.log( num2 );
+  */
+
+  /**
+   * Set up for state.
+   * First item is a variable that holds the state value.
+   * Second item is a function that we use to update the state value.
+   * !!! IMPORTANT: We never update the first item DIRECTLY EVER.
+   */
+
     
-    const [newTask, setNewTask] = useState( 'default' ); 
+    const [newTask, setNewTask] = useState( 'default' ); // Argument in "useState()" is the default value for this state.
+
+    // Set up state for our to-do list items.
+    const[toDos, setToDos] = useState( [ //Default list of to-dos
+        { task: "Buy Apples"},
+        {task: "Learn React"},
+        {task: "Revise in class concepts"}
+
+        //Turn the array into a map with key-valuer pairs, easy to outpt JSX this way.
+   ] 
+   .map( ( toDo, index ) => <li key={index}>{toDo.task}</li> ) );
+
 
     
 
@@ -26,7 +51,7 @@ function ToDo ()
         </p>
         <input type="submit" value="Add To-Do" />
       </form>
-      <ul></ul>
+  <ul>{toDos}</ul>
     </>
   );
 }
