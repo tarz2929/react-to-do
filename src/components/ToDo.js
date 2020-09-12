@@ -24,9 +24,9 @@ function ToDo ()
 
     // Set up state for our to-do list items.
     const[toDos, setToDos] = useState( [ //Default list of to-dos
-        { task: "Buy Apples"},
-        {task: "Learn React"},
-        {task: "Revise in class concepts"}
+        { id:uuidv4(), task: "Buy Apples"},
+        {id:uuidv4(), task: "Learn React"},
+        {id:uuidv4(), task: "Revise in class concepts"}
 
         //Turn the array into a map with key-valuer pairs, easy to outpt JSX this way.
    ]     );
