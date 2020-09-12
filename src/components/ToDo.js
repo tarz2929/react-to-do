@@ -29,8 +29,7 @@ function ToDo ()
         {task: "Revise in class concepts"}
 
         //Turn the array into a map with key-valuer pairs, easy to outpt JSX this way.
-   ] 
-   .map( ( toDo, index ) => <li key={index}>{toDo.task}</li> ) );
+   ]     );
 
 
     
@@ -51,7 +50,7 @@ function ToDo ()
         </p>
         <input type="submit" value="Add To-Do" />
       </form>
-  <ul>{toDos}</ul>
+  <ul>{toDos.map( ( toDo, index ) => <li key={index}>{toDo.task}</li> )}</ul>
     </>
   );
 }
